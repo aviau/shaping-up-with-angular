@@ -5,16 +5,14 @@
     </head>
     <body>
         <div ng-controller="StoreController as store">
-            <div ng-repeat="product in store.products">
-                <h1> {{product.name}} </h1>
-                <h1> ${{product.price}} </h1>
-                <p> {{product.description}} </p>
-                <button ng-show="product.canPurchase"> Add to cart </button>
-            </div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="product in store.products">
+                <h3>
+                    {{product.name}}
+                    <em class="pull-right">${{product.price}}</em>
         </div>
         <script type="text/javascript" src="bower_components/angular/angular.js"></script>
         <script type="text/javascript" src="app.js"></script>
-        <p> {{"Hello" + " you"}} </p>
     </body>
 </html>
 
