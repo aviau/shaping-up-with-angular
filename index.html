@@ -5,9 +5,12 @@
     </head>
     <body>
         <div ng-controller="StoreController as store">
-            <h1> {{store.product.name}} </h1>
-            <h1> ${{store.product.price}} </h1>
-            <p> {{store.product.description}} </p>
+            <div ng-repeat="product in store.products">
+                <h1> {{product.name}} </h1>
+                <h1> ${{product.price}} </h1>
+                <p> {{product.description}} </p>
+                <button ng-show="product.canPurchase"> Add to cart </button>
+            </div>
         </div>
         <script type="text/javascript" src="bower_components/angular/angular.js"></script>
         <script type="text/javascript" src="app.js"></script>
